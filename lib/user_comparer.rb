@@ -23,9 +23,20 @@ module UserComparer
   end
 
   class Comparer
+  	attr_reader :user1, :user2
   	def initialize(user1, user2)
   		@user1 = user1
   		@user2 = user2
+  	end
+
+  	def compare
+  		if user1.followers > user2.followers
+  			return user1.username
+  		elsif user2.followers > user1.followers
+  			return user2.username
+  		else
+  			return "tie"
+  		end
   	end
   end
 end
