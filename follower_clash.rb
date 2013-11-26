@@ -17,3 +17,9 @@ puts "____________________________________"
 puts "#{user1.username}'s friend count: #{user1.friends}"
 puts "#{user2.username}'s friend count: #{user2.friends}"
 puts "And the user with the most friends is: #{comparer.compare_friends}"
+
+puts "____________________________________"
+
+puts "#{user1.username}'s tweet count: #{user1.tweets}"
+puts "#{user2.username}'s tweet count: #{user2.tweets}"
+puts "And the user with the most tweets is: #{comparer.compare_tweets}"

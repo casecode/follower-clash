@@ -5,7 +5,7 @@ require 'foreman'
 
 module UserComparer
   class User
-  	attr_reader :username, :client
+  	attr_reader :username
   	def initialize(username)
   		@username = username
   	end
@@ -27,6 +27,10 @@ module UserComparer
 
   	def friends
   		client.user(@username).friends_count
+  	end
+
+  	def tweets
+  		client.user(@username).tweets_count
   	end
   end
 
@@ -51,6 +55,16 @@ module UserComparer
   		if user1.friends > user2.friends
   			return user1.username
   		elsif user2.friends > user1.friends
+  			return user2.username
+  		else
+  			return "tie"
+  		end
+  	end
+
+  	def compare_tweets
+  		if user1.tweets > user2.tweets
+  			return user1.username
+  		elsif user2.tweets > user1.tweets
   			return user2.username
   		else
   			return "tie"
